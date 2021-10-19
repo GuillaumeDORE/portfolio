@@ -1,0 +1,30 @@
+.footer {
+    width: 100%;
+    height: 10rem;
+    margin-top: 4rem;
+    padding: 1rem 0;
+    background-color: $darker-blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    &__link {
+        background-color: lightblue;
+        color: $dark-blue;
+        padding: 1rem;
+        border-radius: 2rem;
+        transition: 0.5s;
+        &:hover {
+            background-color: $gold;
+        }
+    }
+    &__credit {
+        color: $gold;
+        font-size: 00.8rem;
+    }
+}
+@media (min-width: 950px) {
+    .footer__social {
+        display: none;
+    }
+}

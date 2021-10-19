@@ -1,0 +1,139 @@
+.projects__title,
+.skills__title,
+.about__title {
+    &::before {
+        color: $gold;
+        padding-right: 0.5rem;
+    }
+    &::after {
+        content: "";
+        display: block;
+        position: relative;
+        top: -20px;
+        left: 300px;
+        height: 1px;
+        width: 50%;
+        background-color: $light-blue;
+    }
+}
+
+@media (max-width: 950px) {
+    .projects__title,
+    .skills__title,
+    .about__title {
+        &::after {
+            display: none;
+        }
+    }
+}
+// ABOUT
+.about__title {
+    &::before {
+        content: "1.";
+    }
+}
+.about__description p {
+    padding-bottom: 1rem;
+}
+// SKILLS
+.skills__title {
+    &::before {
+        content: "2.";
+    }
+}
+.skills__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill {
+    width: 10%;
+    margin: 1rem;
+    padding: 3%;
+    background-color: $light-blue;
+    border-radius: 15%;
+    transition: 0.1s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.skill {
+    animation: apparition-skill $anim-dur backwards;
+    @for $i from 1 through $num-menu {
+        &--#{$i} {
+            animation-delay: $anim-delay * $i;
+        }
+    }
+}
+@keyframes apparition-skill {
+    0% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#more-skills {
+    width: 10%;
+    height: 10%;
+    border-radius: 500px;
+    border: none;
+    background-color: $gold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+    & svg {
+        color: $dark-blue;
+    }
+}
+.hidden {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .skill {
+        width: 20%;
+    }
+}
+
+// PROJECTS
+.projects .project {
+    max-width: 1080px;
+    margin: auto;
+}
+.projects__title {
+    &::before {
+        content: "3.";
+    }
+}
+
+.projects:before,
+.skills:before,
+.about:before {
+    content: "";
+    display: block;
+    height: 50px;
+}
+
+.about,
+.skills,
+.projects {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s,
+        transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+    &[data-scroll="in"] {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,43 @@
+.social {
+    position: fixed;
+    bottom: 3rem;
+    left: 3rem;
+    opacity: 0;
+    animation: anim-from-bottom 1s ease 1.5s forwards;
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -150px;
+            width: 2px;
+            height: 150px;
+            background-color: $light-blue;
+        }
+    }
+    &__link {
+        cursor: pointer;
+        transition: 0.15s ease;
+        & svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: $light-blue;
+            padding-bottom: 0.25rem;
+        }
+        &:hover {
+            transform: translateY(-5px) scale(1.1);
+            & svg {
+                color: $gold;
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .social {
+        display: none;
+    }
+}

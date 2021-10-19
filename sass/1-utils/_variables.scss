@@ -1,0 +1,20 @@
+$dark-blue: #00242b;
+$darker-blue: #001c22;
+$light-blue: #c4e3f6;
+$gold: #bfae48;
+$ruby: #93032e;
+
+$anim-dur: 800ms;
+$num-menu: 20;
+$anim-delay: $anim-dur / $num-menu;
+
+@keyframes anim-from-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

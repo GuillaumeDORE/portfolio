@@ -1,0 +1,39 @@
+.contact {
+    position: fixed;
+    bottom: 3rem;
+    right: -3rem;
+    opacity: 0;
+    animation: anim-from-bottom 1s ease 1.5s forwards;
+
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -150px;
+            width: 2px;
+            height: 150px;
+            background-color: $light-blue;
+        }
+    }
+    &__link {
+        cursor: pointer;
+        color: $light-blue;
+        padding-bottom: 0.25rem;
+        transform: rotate(90deg) translateX(-110px);
+        transition: 0.15s ease;
+        &:hover {
+            transform: rotate(90deg) translateX(-115px) scale(1.05);
+            color: $gold;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .contact {
+        display: none;
+    }
+}

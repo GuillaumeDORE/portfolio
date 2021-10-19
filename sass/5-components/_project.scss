@@ -1,0 +1,108 @@
+.project {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 1.5rem;
+    height: 40vh;
+    transition: 0.1s ease-in-out;
+    &__content {
+        height: inherit;
+        grid-area: 1 / 1 / -1 / 9;
+        z-index: 1;
+    }
+    &__overline {
+        font-size: 0.8rem;
+        color: $gold;
+    }
+    &__title {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+    &__description {
+        background-color: hsla(203, 74%, 87%, 0.8);
+        color: $dark-blue;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+    }
+    &__tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.5rem 0;
+        & li {
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            transition: 0.3s;
+            &:hover {
+                color: $gold;
+            }
+        }
+    }
+    &__image {
+        grid-area: 1 / 6 / -1 / -1;
+        height: inherit;
+        width: 100%;
+        & a {
+            width: 100%;
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            filter: opacity(0.2);
+            transition: 0.5s;
+            &:hover {
+                filter: opacity(1);
+            }
+        }
+    }
+    &__links svg {
+        height: 30px;
+        transition: 0.3s;
+        &:hover {
+            color: $gold;
+        }
+    }
+
+    &--right {
+        text-align: right;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        &__content {
+            height: inherit;
+            grid-area: 1 / 5 / -1 / -1;
+        }
+        &__tech-list {
+            flex-direction: row-reverse;
+            & li {
+                margin-right: 0;
+                margin-left: 0.5rem;
+            }
+        }
+        &__image {
+            grid-area: 1 / 1 / -1 / 8;
+        }
+    }
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 950px) {
+    .project {
+        width: 90%;
+        height: 65vh;
+        &__content {
+            grid-area: 1 / 13 / 1 / 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__tech-list {
+            justify-content: center;
+        }
+        &__image {
+            grid-area: 1 / 13 / 1 / 1;
+        }
+    }
+}
