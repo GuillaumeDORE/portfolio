@@ -86,6 +86,9 @@
         &__toggle-button {
             display: flex;
         }
+        &__left p {
+            display: none;
+        }
     }
     .sticky {
         padding: 0;
