@@ -18,6 +18,12 @@
             background-color: $gold;
         }
     }
+    &__social a svg {
+        margin: 0.75rem 0 0 0;
+    }
+    &__contact {
+        text-align: center;
+    }
     &__credit {
         color: $gold;
         font-size: 00.8rem;

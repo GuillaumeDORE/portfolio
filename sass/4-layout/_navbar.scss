@@ -35,6 +35,7 @@
         justify-content: space-between;
         width: 30px;
         height: 21px;
+        cursor: pointer;
         & .bar {
             height: 3px;
             width: 100%;
@@ -96,6 +97,7 @@
     .navbar {
         display: none;
         width: 100%;
+        height: 100vh;
         flex-direction: column;
         align-items: center;
         background-color: #012831;
@@ -104,6 +106,7 @@
         }
         &.active {
             display: flex;
+            justify-content: flex-start;
         }
     }
 }
