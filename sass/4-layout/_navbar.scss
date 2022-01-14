@@ -44,7 +44,16 @@
         }
     }
 }
-
+#cv {
+    border: 1px solid $gold;
+    border-radius: 5px;
+    padding: 0 1rem;
+    transition: 0.3s;
+    &:hover {
+        background-color: $gold;
+        color: $dark-blue;
+    }
+}
 .appear svg #svg-header,
 .appear p {
     display: inline;
@@ -61,7 +70,7 @@
     justify-content: flex-end;
     align-items: center;
     margin-right: 3rem;
-    & a {
+    &__link {
         padding: 0 1rem;
 
         // animation hover des liens
